@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Las raíces que perdimos</title>
+<meta name="description" content="Humanismo de datos: la pérdida de cobertura arbórea en México por estado, 2001-2025. Proyecto de Raúl Cruz Muñoz, Universidad Anáhuac México Norte.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;700;800&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/styles.css">
+<script>document.documentElement.classList.add('js')</script>
+</head>
+<body>
+<!--CONTENT-START-->
+<div class="bg-stage" id="bgStage" aria-hidden="true">
+  <video class="bg-video" data-bg="portada" muted loop playsinline preload="auto" poster="assets/bosque-portada.jpg"><source src="assets/bosque-portada.mp4" type="video/mp4"></video>
+  <video class="bg-video" data-bg="arbol" muted loop playsinline preload="none" poster="assets/bosque-arbol.jpg"><source src="assets/bosque-arbol.mp4" type="video/mp4"></video>
+  <video class="bg-video" data-bg="raices" muted loop playsinline preload="none" poster="assets/bosque-raices.jpg"><source src="assets/bosque-raices.mp4" type="video/mp4"></video>
+  <video class="bg-video" data-bg="cierre" muted loop playsinline preload="none" poster="assets/bosque-cierre.jpg"><source src="assets/bosque-cierre.mp4" type="video/mp4"></video>
+</div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+<header class="topbar" id="topbar">
+  <a class="brand" href="#inicio">Las raíces que perdimos</a>
+  <nav class="nav" aria-label="Secciones">
+    <a href="#arbol">El árbol</a>
+    <a href="#raices">Las raíces</a>
+    <a href="#hipotesis">¿Y si seguimos?</a>
+    <a href="#fuentes">Fuentes</a>
+  </nav>
+  <button class="legend-toggle" id="legendToggle" aria-expanded="false" aria-controls="legendTree">Leyenda</button>
+</header>
+
+
+
+<main>
+  <!-- PORTADA -->
+  <section class="hero" id="inicio" data-bg="portada">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <div class="hero-inner">
+      <p class="eyebrow rise" style="--d:.1s">Humanismo de datos · México 2001-2025</p>
+      <h1 class="rise" style="--d:.25s">Las raíces que perdimos</h1>
+      <p class="hero-lead rise" style="--d:.5s">Entre 2001 y 2025, México perdió</p>
+      <p class="hero-figure rise" style="--d:.65s"><span id="heroCount">0.00</span> millones de hectáreas</p>
+      <p class="hero-sub rise" style="--d:.85s">de cobertura arbórea: el <span data-fill="pctLost"></span> % de la que tenía en el año 2000. Más de 36 veces la superficie de la Ciudad de México. Este sitio convierte ese número en un árbol.</p>
+      <a class="cta rise" style="--d:1s" href="#arbol"><span>Entrar al bosque</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 3 V16 M4 10 L10 16 L16 10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      <div class="scroll-cue rise" style="--d:1.2s" aria-hidden="true"><span></span></div>
+      <p class="hint rise" style="--d:1.2s">Desliza hacia abajo para recorrer los años</p>
+    </div>
+  </section>
+
+  <!-- NIVEL 1 · VISTA GENERAL -->
+  <section class="story" id="arbol" data-bg="arbol" aria-label="Vista general: el árbol de México">
+    <div class="stage" id="stage">
+      <div class="stage-head">
+        <p class="eyebrow">Nivel 1 · Vista general</p>
+        <div class="year" id="yearNow">2001</div>
+        <dl class="counters">
+          <div><dt>Pérdida acumulada</dt><dd><span id="cumHa">0</span> ha</dd></div>
+          <div><dt>Hojas caídas</dt><dd><span id="fallenN">0</span> de 100</dd></div>
+        </dl>
+      </div>
+      <aside class="legend legend-tree" id="legendTree" aria-label="Leyenda">
+  <h2>Cómo leer este árbol</h2>
+  <div class="lg-row">
+    <svg viewBox="-20 -10 40 20" class="lg-ico" aria-hidden="true"><path class="leaf-shape alive" d="M -18 0 C -9 -8 9 -8.4 18 0 C 9 7.6 -9 8 -18 0 Z"/><path d="M -16 0 L 15 0" class="leaf-vein"/></svg>
+    <div><b>Hoja verde</b> = <span data-fill="leafHa"></span> ha en pie<small>100 hojas = la cobertura arbórea del año 2000</small></div>
+  </div>
+  <div class="lg-row">
+    <svg viewBox="-20 -10 40 20" class="lg-ico" aria-hidden="true"><path class="leaf-shape dry" d="M -18 0 C -9 -8 9 -8.4 18 0 C 9 7.6 -9 8 -18 0 Z"/><path d="M -16 0 L 15 0" class="leaf-vein dark"/></svg>
+    <div><b>Hoja seca caída</b> = <span data-fill="leafHa"></span> ha perdidas<small>Cae cuando la pérdida acumulada completa 1 %</small></div>
+  </div>
+  <div class="lg-row">
+    <svg viewBox="0 0 40 60" class="lg-ico tall" aria-hidden="true"><rect x="13" y="10" width="14" height="48" rx="2" fill="#5CC2B5"/><circle cx="20" cy="9" r="6" fill="#140E09" stroke="#5CC2B5" stroke-width="3"/></svg>
+    <div><b>Raíz</b> = un estado<small data-fill-html="legendRule">Longitud = hectáreas perdidas 2001-2025 (Altura_Barra_PX). Se mide desde el nudo; el ancho es fijo.</small></div>
+  </div>
+  <div class="lg-scale"><span class="bar" aria-hidden="true"></span><span data-fill-html="legendScale">100 px = 197,550 ha</span></div>
+  <h3>Color de la raíz = región</h3>
+  <ul class="lg-colors" data-legend-colors></ul>
+</aside>
+      <svg class="tree" id="tree" viewBox="0 0 1200 900" role="img" aria-label="Árbol de 100 hojas que representa la cobertura arbórea de México en el año 2000"></svg>
+      <article class="story-card" id="storyCard" aria-live="polite">
+        <p class="story-year" id="storyYear"></p>
+        <h2 id="storyTitle"></h2>
+        <p id="storyText"></p>
+      </article>
+      <div class="years-strip" id="yearsStrip" aria-label="Pérdida nacional por año. Haz clic en un año para ir a él."></div>
+    </div>
+  </section>
+
+  <!-- TRANSICIÓN: bajar a las raíces -->
+  <section class="descent" id="descent" data-bg="raices" aria-label="Transición hacia las raíces">
+    <svg class="descent-root" viewBox="0 0 400 900" preserveAspectRatio="xMidYMin meet" aria-hidden="true">
+      <path id="descentPath" d="M200 0 C 200 120 150 180 170 300 C 190 420 260 470 230 600 C 205 710 150 760 175 900"/>
+      <path class="twig" d="M170 300 C 120 330 90 380 60 440"/><path class="twig" d="M230 600 C 290 630 320 690 350 760"/><path class="twig" d="M185 190 C 230 210 270 240 300 290"/>
+    </svg>
+    <div class="descent-steps">
+      <p class="descent-line reveal">Las hojas muestran <b>cuánto</b> perdió México.</p>
+      <p class="descent-line reveal">Las raíces muestran <b>dónde</b>.</p>
+      <p class="descent-line reveal">Bajo la tierra, cada raíz es un estado.</p>
+    </div>
+  </section>
+
+  <!-- NIVEL 2 y 3 · EXPLORACIÓN Y DETALLE -->
+  <section class="roots-section" id="raices" data-bg="raices" aria-label="Exploración: las raíces por estado">
+    <div class="wrap roots-head">
+     <div class="roots-intro">
+      <p class="eyebrow">Nivel 2 · Exploración</p>
+      <h2 class="section-title">El árbol no pierde igual por todos lados</h2>
+      <p class="section-lead">Cada raíz es un estado. Su longitud muestra cuánta cobertura arbórea perdió entre 2001 y 2025. Pasa el cursor sobre una raíz y haz clic para conocer su historia.</p>
+
+      <div class="controls">
+        <div class="control-group" role="group" aria-label="Filtrar por región">
+          <span class="control-label">Región</span>
+          <div class="chips" id="regionChips"></div>
+        </div>
+        <div class="control-group" role="group" aria-label="Filtrar por causa principal">
+          <span class="control-label">Causa principal</span>
+          <div class="chips" id="causeChips"></div>
+        </div>
+        <div class="control-group" role="group" aria-label="Qué mide la raíz">
+          <span class="control-label">La raíz mide</span>
+          <div class="segmented" id="modeToggle">
+            <button type="button" id="modeAbs" class="is-on" aria-pressed="true">Hectáreas perdidas</button>
+            <button type="button" id="modeRel" aria-pressed="false">% de su cobertura</button>
+          </div>
+        </div>
+      </div>
+      <p class="mode-note" id="modeNote"></p>
+      <button type="button" class="replay" id="replayRoots"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10 a6 6 0 1 0 2-4.5 M4 3 V6 H7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Ver crecer las raíces otra vez</button>
+     </div>
+     <aside class="legend legend-roots" aria-label="Leyenda">
+  <h2>Cómo leer este árbol</h2>
+  <div class="lg-row">
+    <svg viewBox="-20 -10 40 20" class="lg-ico" aria-hidden="true"><path class="leaf-shape alive" d="M -18 0 C -9 -8 9 -8.4 18 0 C 9 7.6 -9 8 -18 0 Z"/><path d="M -16 0 L 15 0" class="leaf-vein"/></svg>
+    <div><b>Hoja verde</b> = <span data-fill="leafHa"></span> ha en pie<small>100 hojas = la cobertura arbórea del año 2000</small></div>
+  </div>
+  <div class="lg-row">
+    <svg viewBox="-20 -10 40 20" class="lg-ico" aria-hidden="true"><path class="leaf-shape dry" d="M -18 0 C -9 -8 9 -8.4 18 0 C 9 7.6 -9 8 -18 0 Z"/><path d="M -16 0 L 15 0" class="leaf-vein dark"/></svg>
+    <div><b>Hoja seca caída</b> = <span data-fill="leafHa"></span> ha perdidas<small>Cae cuando la pérdida acumulada completa 1 %</small></div>
+  </div>
+  <div class="lg-row">
+    <svg viewBox="0 0 40 60" class="lg-ico tall" aria-hidden="true"><rect x="13" y="10" width="14" height="48" rx="2" fill="#5CC2B5"/><circle cx="20" cy="9" r="6" fill="#140E09" stroke="#5CC2B5" stroke-width="3"/></svg>
+    <div><b>Raíz</b> = un estado<small data-fill-html="legendRule">Longitud = hectáreas perdidas 2001-2025 (Altura_Barra_PX). Se mide desde el nudo; el ancho es fijo.</small></div>
+  </div>
+  <div class="lg-scale"><span class="bar" aria-hidden="true"></span><span data-fill-html="legendScale">100 px = 197,550 ha</span></div>
+  <h3>Color de la raíz = región</h3>
+  <ul class="lg-colors" data-legend-colors></ul>
+</aside>
+    </div>
+
+    <div class="roots-scroll" id="rootsScroll">
+      <svg class="roots" id="roots" role="img" aria-label="Raíces de los 32 estados"></svg>
+    </div>
+    <div class="wrap">
+      <p class="roots-foot" id="rootsFoot"></p>
+      <div class="insights reveal">
+        <div><b data-count="top5Pct"></b><span>de la pérdida está en 5 estados del sur y sureste</span></div>
+        <div><b data-count="penPct"></b><span>corresponde a la península de Yucatán</span></div>
+        <div><b>Campeche</b><span>perdió más que los 24 estados con menor pérdida juntos</span></div>
+      </div>
+    </div>
+    <div class="tooltip" id="tooltip" role="status" hidden></div>
+  </section>
+
+  <!-- ESCENARIO HIPOTÉTICO -->
+  <section class="hypo" id="hipotesis" data-bg="cierre" data-bg-gray="1" aria-label="Escenario hipotético">
+    <div class="wrap hypo-grid">
+      <div class="hypo-art">
+        <p class="hypo-tag">Proyección · no es un dato</p>
+        <svg id="deadTree" viewBox="0 0 1200 900" role="img" aria-label="Árbol del escenario hipotético: pierde hojas según el año que elijas"></svg>
+      </div>
+      <div class="hypo-text">
+        <p class="badge">Escenario hipotético · No es un dato</p>
+        <h2>Si seguimos al mismo ritmo…</h2>
+        <p>Al ritmo promedio de 2021-2025 (<span data-fill="rate"></span> ha por año), las <span data-fill="remainM"></span> millones de hectáreas que quedan desaparecerían hacia el año <b data-fill="yearEnd"></b>.</p>
+        <div class="sim reveal">
+          <div class="sim-read"><span class="sim-year" id="simYear">2025</span><span class="sim-left"><b id="simLeaves">90</b> hojas en pie · <b id="simPct">89.8</b> % del bosque de 2000</span></div>
+          <label class="sim-label" for="simRange">Arrastra para avanzar en el tiempo</label>
+          <div class="sim-row">
+            <button type="button" class="sim-play" id="simPlay" aria-label="Reproducir la proyección"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6 4 L16 10 L6 16 Z" fill="currentColor"/></svg></button>
+            <input type="range" id="simRange" min="2025" max="2233" step="1" value="2025">
+          </div>
+        </div>
+        <p class="muted">Es una proyección lineal ilustrativa que no considera la regeneración natural ni la restauración. Funciona como aviso, no como pronóstico.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONCLUSIÓN -->
+  <section class="closing" id="conclusion" data-bg="cierre">
+    <div class="wrap">
+      <p class="closing-quote reveal">Cada hoja que cayó equivale a <span data-fill="leafHa"></span> hectáreas.<br>¿Cuántas más vamos a dejar caer?</p>
+      <div class="live reveal" aria-live="off">
+        <p class="live-label">Mientras lees esta página</p>
+        <p class="live-num"><span id="liveM2">0</span> m²</p>
+        <p class="live-sub">de cobertura arbórea se pierden en México al ritmo promedio de 2021-2025 (<span data-fill="m2s"></span> m² por segundo). Equivale a <span id="liveCanchas">0</span> canchas de futbol. Es una estimación, no una medición en tiempo real.</p>
+      </div>
+      <p class="closing-text reveal">La deforestación en México no es un fenómeno lejano ni repartido. Se concentra en las selvas del sureste, en lugares como Candelaria, Ocosingo, Bacalar, Tizimín o los Chimalapas, donde el bosque es agua, miel, alimento e identidad para comunidades mayas, zoques y campesinas. La principal causa es la expansión de la agricultura y la ganadería.</p>
+      <a class="cta ghost reveal" href="#arbol"><span>Volver a recorrer el árbol</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M10 16 V4 M4 10 L10 4 L16 10" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </section>
+
+  <!-- FUENTES -->
+  <section class="sources" id="fuentes" data-bg="none">
+    <div class="wrap sources-grid">
+      <div>
+        <h2>Fuentes</h2>
+        <ul class="refs">
+          <li>Global Forest Watch. (2026). <i>Tablero de México: pérdida de cobertura arbórea por entidad federativa y municipio, 2001-2025</i> [Conjunto de datos, v20260407]. World Resources Institute. <a href="https://www.globalforestwatch.org/dashboards/country/MEX/" target="_blank" rel="noopener">globalforestwatch.org</a></li>
+          <li>Hansen, M. C., et al. (2013). High-resolution global maps of 21st-century forest cover change. <i>Science, 342</i>(6160), 850-853. <a href="https://doi.org/10.1126/science.1244693" target="_blank" rel="noopener">doi.org/10.1126/science.1244693</a></li>
+          <li>Comisión Nacional Forestal. (s. f.). <i>DataBosques</i>. <a href="http://databosques.cnf.gob.mx/" target="_blank" rel="noopener">databosques.cnf.gob.mx</a></li>
+          <li>Ortuño López, G. (2025). México, en la lista de los 10 países con mayor pérdida de bosques primarios en el mundo en 2024. <i>Mongabay Latam</i>. <a href="https://es.mongabay.com/2025/06/incendios-bosques-mexico-deforestacion-2024/" target="_blank" rel="noopener">es.mongabay.com</a></li>
+          <li>Greenpeace México. (2023). <i>Ante aumento de deforestación en Bacalar…</i> <a href="https://www.greenpeace.org/mexico/noticia/53600/" target="_blank" rel="noopener">greenpeace.org/mexico</a></li>
+          <li>Por Esto. (2022 y 2026). Notas sobre Campeche y Yucatán. <a href="https://www.poresto.com/yucatan/2026/7/27/la-selva-maya-se-extingue-yucatan-perdio-580-mil-hectareas-desde-el-ano-2000.html" target="_blank" rel="noopener">poresto.com</a></li>
+          <li>SinEmbargo. (2016). <i>Nos queda apenas 28% de la Selva Lacandona</i>. <a href="https://www.sinembargo.mx/?p=3103500" target="_blank" rel="noopener">sinembargo.mx</a></li>
+          <li>El Universal. (s. f.). <i>Incendios han arrasado 30 mil hectáreas en Los Chimalapas</i>. <a href="https://www.eluniversal.com.mx/estados/incendios-han-arrasado-30-mil-hectareas-en-los-chimalapas-oaxaca-comision-estatal-forestal/" target="_blank" rel="noopener">eluniversal.com.mx</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Metodología</h2>
+        <p>Los datos son la pérdida bruta de cobertura arbórea (densidad de copa ≥ 30 %) medida con imágenes satelitales Landsat. No descuenta la regeneración y no equivale a deforestación permanente.</p>
+        <p>La longitud de cada raíz es la columna <code>Altura_Barra_PX</code> del conjunto de datos: pérdida en miles de hectáreas × 0.5062 (500 px ÷ 987.66, el valor de Campeche). Todas las raíces tienen el mismo ancho.</p>
+        <p>Las 100 hojas representan la cobertura del año 2000. Una hoja cae cuando la pérdida acumulada completa otro 1 %; por eso en 2025 hay 10 hojas caídas (10.2 %). La serie nacional anual suma 5,440,364 ha; la suma por estados da 5,440,367 ha. La diferencia de 3 ha se debe al redondeo de cada fila.</p>
+        <p><a class="data-link" href="data/datos_limpios.csv">Descargar el conjunto de datos (CSV)</a></p>
+        <p class="author">Raúl Cruz Muñoz · ID 00576757<br>Visualización de Datos · Universidad Anáhuac México Norte · 2026</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<aside class="panel" id="panel" aria-label="Detalle del estado" aria-hidden="true" tabindex="-1">
+  <button class="panel-close" id="panelClose" aria-label="Cerrar la tarjeta">×</button>
+  <div id="panelBody"></div>
+</aside>
+<div class="scrim" id="scrim" hidden></div>
+<div class="load-error" id="loadError" hidden>No se pudieron cargar los datos. Abre el sitio desde su enlace publicado (no como archivo local).</div>
+
+<script src="js/main.js"></script>
+<!--CONTENT-END-->
+</body>
+</html>

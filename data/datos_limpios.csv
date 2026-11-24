@@ -1,0 +1,33 @@
+﻿Posicion,Estado,Region,Periodo_inicio,Periodo_fin,Anio_mayor_perdida,Perdida_anio_mayor_ha,Perdida_ha,Perdida_miles_ha,Porcentaje_nacional,Perdida_bosque_primario_ha,Perdida_por_incendios_ha,Cobertura_arborea_2000_ha,Porcentaje_cobertura_perdida,Causa_principal,Emisiones_MtCO2e,Altura_Barra_PX
+1,Campeche,Península de Yucatán,2001,2025,2020,79986,987665,987.66,18.15,301005,214417,4452318,22.18,Agricultura permanente,390.65,499.95
+2,Chiapas,Sur y Golfo,2001,2025,2019,70013,856692,856.69,15.75,228110,114486,4810907,17.81,Agricultura permanente,429.85,433.66
+3,Quintana Roo,Península de Yucatán,2001,2025,2020,53440,663645,663.64,12.2,134271,179727,3744008,17.73,Agricultura permanente,249.9,335.93
+4,Yucatán,Península de Yucatán,2001,2025,2009,55594,580414,580.41,10.67,7055,60296,3028546,19.16,Agricultura permanente,216.42,293.8
+5,Veracruz,Sur y Golfo,2001,2025,2019,36913,558900,558.9,10.27,26039,43837,3092974,18.07,Agricultura permanente,246.3,282.92
+6,Oaxaca,Sur y Golfo,2001,2025,2019,33686,489542,489.54,9.0,116340,85097,5142057,9.52,Agricultura permanente,237.27,247.81
+7,Tabasco,Sur y Golfo,2001,2025,2019,23072,183717,183.72,3.38,8214,31286,846920,21.69,Agricultura permanente,87.96,93.0
+8,Tamaulipas,Norte,2001,2025,2009,13438,172471,172.47,3.17,15261,22616,2389065,7.22,Agricultura permanente,40.48,87.3
+9,Guerrero,Sur y Golfo,2001,2025,2018,11772,147090,147.09,2.7,19828,16239,3043895,4.83,Agricultura permanente,62.96,74.46
+10,Michoacán,Occidente y Pacífico,2001,2025,2018,10032,117217,117.22,2.15,20897,24981,2386410,4.91,Agricultura permanente,53.97,59.34
+11,San Luis Potosí,Norte,2001,2025,2019,8401,103893,103.89,1.91,13283,17030,1227759,8.46,Agricultura permanente,41.53,52.59
+12,Jalisco,Occidente y Pacífico,2001,2025,2023,8247,80575,80.58,1.48,7564,14573,2453894,3.28,Agricultura permanente,33.09,40.79
+13,Puebla,Centro,2001,2025,2024,6814,73837,73.84,1.36,3691,11904,966558,7.64,Agricultura permanente,36.05,37.38
+14,Chihuahua,Norte,2001,2025,2025,29589,73739,73.74,1.36,0,57534,3257549,2.26,Incendios forestales,8.2,37.33
+15,Nuevo León,Norte,2001,2025,2021,9114,72447,72.45,1.33,3778,18331,1075200,6.74,Agricultura permanente,9.84,36.67
+16,Hidalgo,Centro,2001,2025,2020,4893,67400,67.4,1.24,8121,9081,788356,8.55,Agricultura permanente,32.05,34.12
+17,Sinaloa,Occidente y Pacífico,2001,2025,2005,6456,56384,56.38,1.04,0,3893,2519945,2.24,Agricultura permanente,17.23,28.54
+18,Nayarit,Occidente y Pacífico,2001,2025,2022,5406,37995,38.0,0.7,7531,6678,1231153,3.09,Agricultura permanente,23.65,19.24
+19,Durango,Norte,2001,2025,2025,4351,33117,33.12,0.61,0,13921,3008794,1.1,Incendios forestales,6.38,16.77
+20,Coahuila,Norte,2001,2025,2011,3019,18568,18.57,0.34,0,12092,657310,2.82,Incendios forestales,1.83,9.4
+21,Baja California,Norte,2001,2025,2009,4213,15839,15.84,0.29,0,15490,49269,32.15,Incendios forestales,1.09,8.02
+22,Sonora,Norte,2001,2025,2025,5097,14541,14.54,0.27,1,7816,864635,1.68,Incendios forestales,1.78,7.36
+23,Estado de México,Centro,2001,2025,2024,2022,13241,13.24,0.24,2407,4837,624510,2.12,Agricultura permanente,5.83,6.7
+24,Colima,Occidente y Pacífico,2001,2025,2001,876,7654,7.65,0.14,118,572,303087,2.53,Agricultura permanente,3.18,3.87
+25,Querétaro,Centro,2001,2025,2025,1109,5766,5.77,0.11,2102,2744,359402,1.6,Incendios forestales,1.31,2.92
+26,Guanajuato,Centro,2001,2025,2021,447,2238,2.24,0.04,243,881,276430,0.81,Incendios forestales,0.72,1.13
+27,Tlaxcala,Centro,2001,2025,2021,504,1955,1.96,0.04,45,863,59807,3.27,Tala y extracción forestal,0.96,0.99
+28,Zacatecas,Norte,2001,2025,2023,604,1647,1.65,0.03,0,1136,291054,0.57,Incendios forestales,0.19,0.84
+29,Morelos,Centro,2001,2025,2018,116,956,0.96,0.02,174,342,111341,0.86,Agricultura permanente,0.4,0.49
+30,Baja California Sur,Norte,2001,2025,2001,501,818,0.82,0.02,0,62,49359,1.66,Agricultura permanente,0.17,0.42
+31,Ciudad de México,Centro,2001,2025,2023,111,373,0.37,0.01,30,108,39078,0.96,Tala y extracción forestal,0.21,0.19
+32,Aguascalientes,Occidente y Pacífico,2001,2025,2024,7,30,0.03,0.0,0,11,17334,0.18,Indeterminada,0.0,0.02
